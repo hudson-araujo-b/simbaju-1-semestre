@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="300" height="120">
+  <defs>
+    <style>
+      .titulo { font-family: 'Arial', sans-serif; font-weight: 800; font-size: 52px; fill: #ffffff; letter-spacing: 2px; }
+      .subtitulo { font-family: 'Arial', sans-serif; font-weight: 400; font-size: 22px; fill: #b3d9d0; letter-spacing: 4px; }
+    </style>
+  </defs>
+  <text x="15" y="60" class="titulo">UPA</text>
+  <text x="15" y="90" class="subtitulo">FRANCO DA ROCHA</text>
+</svg>

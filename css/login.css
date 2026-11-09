@@ -1,0 +1,358 @@
+:root {
+    --cor-fundo: #ffffff;
+    --cor-texto: #1f2933;
+
+    --cor-foco: #1e6fd9;
+
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+body {
+    margin: 0;
+    font:
+        16px/1.5 system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+h1,
+h2 {
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+}
+
+:focus-visible {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --cor-fundo: #10181d;
+        --cor-texto: #e8eef1;
+    }
+}
+
+/* Fundo e organização da tela de login */
+#login {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    padding: clamp(16px, 4vw, 56px);
+    display: grid;
+    grid-template-columns: 1fr 1.12fr;
+    align-items: center;
+    gap: clamp(24px, 5vw, 80px);
+    overflow: auto;
+    color: #fff;
+    background:
+        radial-gradient(ellipse at 0% 0%, #1268a8 0%, transparent 38%),
+        radial-gradient(ellipse at 100% 100%, #63b7d5 0%, transparent 38%),
+        linear-gradient(120deg, #063c70 0%, #075987 55%, #8ac7df 100%);
+}
+
+#login:before,
+#login:after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+#login:before {
+    width: 340px;
+    height: 340px;
+    left: -190px;
+    top: -210px;
+    background: #0872b9;
+    opacity: 0.8;
+}
+
+#login:after {
+    width: 400px;
+    height: 400px;
+    right: -220px;
+    bottom: -260px;
+    background: #f2c500;
+    border: 70px solid #168447;
+}
+
+#login .marca,
+#login .cartao-login {
+    position: relative;
+    z-index: 1;
+}
+
+/* Marca e símbolo desenhado com CSS */
+#login .marca {
+    text-align: center;
+    max-width: 520px;
+    justify-self: center;
+    padding: 24px;
+}
+
+#login .simbolo-marca {
+    width: 118px;
+    height: 118px;
+    margin: 0 auto 18px;
+    position: relative;
+}
+
+#login .simbolo-marca .cruz {
+    position: absolute;
+    background: #078a4c;
+    border-radius: 17px;
+    width: 54px;
+    height: 118px;
+    left: 32px;
+    top: 0;
+}
+
+#login .simbolo-marca .cruz:after {
+    content: "";
+    position: absolute;
+    width: 118px;
+    height: 54px;
+    background: #0872c9;
+    border-radius: 17px;
+    left: -32px;
+    top: 32px;
+}
+
+#login .simbolo-marca .losango {
+    position: absolute;
+    z-index: 2;
+    width: 58px;
+    height: 58px;
+    background: #f5cc12;
+    transform: rotate(45deg);
+    left: 30px;
+    top: 30px;
+}
+
+#login .simbolo-marca .circulo {
+    position: absolute;
+    z-index: 3;
+    width: 39px;
+    height: 39px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    left: 39px;
+    top: 39px;
+}
+
+#login .marca h1 {
+    font-size: clamp(3rem, 6vw, 5.3rem);
+    letter-spacing: 1px;
+    margin: 0;
+    color: #fff;
+}
+
+#login .marca .subtitulo {
+    font-size: clamp(1.05rem, 2vw, 1.45rem);
+    line-height: 1.35;
+    margin: 8px 0 20px;
+    color: #e7f3fc;
+}
+
+#login .marca .faixa {
+    height: 6px;
+    width: 265px;
+    max-width: 90%;
+    margin: 0 auto 18px;
+    border-radius: 9px;
+    background: linear-gradient(90deg, #078a4c 0 33%, #f5cc12 33% 66%, #0872c9 66%);
+}
+
+#login .marca .localizacao {
+    font-size: 1.05rem;
+}
+
+#login .marca .mensagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 58px;
+    font-size: 0.98rem;
+    text-align: left;
+}
+
+#login .marca .coracao {
+    font-size: 2.6rem;
+    line-height: 1;
+}
+
+#login .cartao-login {
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 630px;
+    justify-self: center;
+    margin: 0;
+    padding: clamp(24px, 4vw, 52px);
+    border: 0;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.97);
+    color: #123f5a;
+    box-shadow: 0 18px 45px rgba(0, 35, 70, 0.2);
+}
+
+#login .cartao-login h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    color: #104765;
+    margin: 0 0 10px;
+}
+
+#login .cartao-login .introducao {
+    text-align: center;
+    color: #60768a;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 24px;
+}
+
+#login label {
+    display: block;
+    font-weight: 600;
+    color: #104765;
+    font-size: 1rem;
+    margin: 0.8rem 0 0.35rem;
+}
+
+#login input,
+#login select {
+    font: inherit;
+    width: 100%;
+    border: 1.5px solid #c8d9e6;
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    color: #214c68;
+    background: #fff;
+    min-height: 56px;
+}
+
+#login .botao-entrar {
+    color: #fff;
+    border: 0;
+    padding: 0.65rem 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    border-radius: 12px;
+    min-height: 60px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, #075779, #086080);
+    margin-top: 6px;
+}
+
+#login .nota {
+    color: #245675;
+    font-size: 0.9rem;
+}
+
+#login .aviso-login {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+#login .icone-info {
+    display: grid;
+    place-items: center;
+    flex: 0 0 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #e2f0f8;
+    color: #176084;
+    font-weight: 800;
+    font-size: 1.15rem;
+}
+@media (max-width: 850px) {
+    #login {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        align-content: center;
+        padding: 18px;
+    }
+    #login .marca {
+        padding: 8px 12px;
+    }
+    #login .simbolo-marca {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 8px;
+    }
+    #login .simbolo-marca .cruz {
+        width: 34px;
+        height: 70px;
+        left: 18px;
+        border-radius: 10px;
+    }
+    #login .simbolo-marca .cruz:after {
+        width: 70px;
+        height: 34px;
+        left: -18px;
+        top: 18px;
+        border-radius: 10px;
+    }
+    #login .simbolo-marca .losango {
+        width: 36px;
+        height: 36px;
+        left: 17px;
+        top: 17px;
+    }
+    #login .simbolo-marca .circulo {
+        width: 25px;
+        height: 25px;
+        left: 22px;
+        top: 22px;
+        border-width: 3px;
+    }
+    #login .marca h1 {
+        font-size: 2.6rem;
+    }
+    #login .marca .subtitulo {
+        font-size: 1rem;
+        margin: 4px 0 10px;
+    }
+    #login .marca .faixa {
+        margin-bottom: 8px;
+    }
+    #login .marca .localizacao,
+    #login .marca .mensagem {
+        display: none;
+    }
+    #login .cartao-login {
+        max-width: 520px;
+        padding: 24px;
+    }
+    #login .cartao-login h2 {
+        font-size: 1.7rem;
+    }
+}
+
+.perfil-observacao {
+    font-weight: 400;
+    color: #60768a;
+}

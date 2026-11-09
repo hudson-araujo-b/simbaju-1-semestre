@@ -1,0 +1,118 @@
+/* Menu lateral */
+
+.menu-marca {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* Cabeçalho */
+
+.usuario-logado {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção Equipe & Filtros */
+.secao-equipe {
+    margin-top: 30px;
+}
+
+.fila-titulo {
+    margin: 0;
+    font-size: 18px;
+}
+
+.fila-explicacao {
+    margin: 4px 0 16px 0;
+    font-size: 12px;
+    color: var(--cor-texto-suave);
+}
+
+.filtros-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.filtros-form input,
+.filtros-form select,
+.botao-filtrar {
+    padding: 10px 14px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.filtros-form input {
+    flex: 1;
+}
+
+.botao-filtrar {
+    background-color: var(--cor-botao);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botao-filtrar:hover {
+    opacity: 0.9;
+}
+
+/* Tabela */
+.area-tabela {
+    border-radius: 7px;
+}
+
+.tabela-fila {
+    border-collapse: collapse;
+}
+
+.tabela-fila th {
+    padding: 11px 10px;
+    background-color: var(--cor-fundo-claro);
+    color: #ffffff;
+}
+
+.tabela-fila th:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.tabela-fila th:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.tabela-fila td {
+    border-bottom: 1px solid #eee;
+}
+
+/* Etiquetas de Perfil */
+.etiqueta {
+    padding: 5px 12px;
+}
+
+.etiqueta-acesso {
+    background-color: var(--cor-verde);
+}
+
+/* CELULAR E TABLET (telas com até 700px de largura) */
+@media (max-width: 700px) {
+    .pagina {
+        padding: 24px 16px;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .filtros-form {
+        flex-direction: column;
+    }
+}
+
+.cabecalho-divisor {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SGAP — Sistema de Triagem Manchester</title>
+        <link rel="stylesheet" href="../css/geral.css" />
+        <link rel="stylesheet" href="../css/equipe.css" />
+        <link rel="stylesheet" href="../css/menu.css" />
+    </head>
+    <body>
+        <div id="estrutura" class="estrutura">
+            <!-- MENU LATERAL -->
+            <nav id="menu-lateral" class="menu-lateral">
+                <div id="menu-marca" class="menu-marca">
+                    <div class="menu-marca">
+                        <img
+                            class="menu-logo"
+                            src="../media/Emblema Brasileiro de Saúde em Cruz.png"
+                            alt="Logo do SGAP"
+                        />
+                        <p class="menu-nome">SGAP</p>
+                    </div>
+                </div>
+                <hr />
+                <ul id="menu-links" class="menu-links">
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./pagina-inicial.html">
+                            Página inicial
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./triagem.html">
+                            Nova triagem
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./historico.html">Histórico</a>
+                    </li>
+                    <li><a class="menu-botao menu-botao-ativo" href="./equipe.html">Equipe</a></li>
+                </ul>
+                <div class="menu-rodape">
+                    <a class="menu-botao menu-botao-deslogar" href="../index.html">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <path d="M9 5H5v14h4M14 8l4 4-4 4M9 12h9" />
+                        </svg>
+                        <span>Deslogar</span>
+                    </a>
+                </div>
+            </nav>
+            <div id="pagina" class="pagina">
+                <!-- CABEÇALHO -->
+                <header id="cabecalho" class="cabecalho">
+                    <div class="cabecalho-titulos">
+                        <h1 class="titulo-sistema">SGAP</h1>
+                        <hr class="cabecalho-divisor" />
+                        <p class="subtitulo-sistema">
+                            Sistema de Triagem Manchester — UPA Franco da Rocha
+                        </p>
+                    </div>
+                    <p id="usuario-logado" class="usuario-logado">
+                        Dra. Marina Souza — Enfermeira Triagem
+                    </p>
+                </header>
+                <main>
+                    <!-- ABA EQUIPE -->
+                    <section class="secao-equipe">
+                        <div class="topo-equipe">
+                            <h2 class="fila-titulo">Gestão de Equipe</h2>
+                            <p class="fila-explicacao">
+                                Consulta de colaboradores e níveis de permissão de acesso ao sistema
+                            </p>
+                        </div>
+                        <!-- Formulário de Filtro -->
+                        <form class="filtros-form" method="GET">
+                            <input
+                                type="text"
+                                name="busca"
+                                placeholder="Buscar por nome, e-mail ou função..."
+                            />
+                            <select name="perfil">
+                                <option value="todos">Filtro de Perfis: Todos</option>
+                                <option value="acesso">Tem acesso ao sistema</option>
+                            </select>
+                            <button type="submit" class="botao-filtrar">Filtrar</button>
+                        </form>
+                        <!-- Tabela de Equipe -->
+                        <div class="area-tabela">
+                            <table id="tabela-equipe" class="tabela-fila">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>E-mail</th>
+                                        <th>Função</th>
+                                        <th>Perfil de Acesso</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Dra. Marina Souza</td>
+                                        <td>marina.souza@upafrancodarocha.com</td>
+                                        <td>Enfermeira Triagem</td>
+                                        <td>
+                                            <span class="etiqueta etiqueta-acesso">
+                                                Tem acesso ao sistema
+                                            </span>
+                                        </td>
+                                        <td>Ativo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dr. Roberto Carlos Mendes</td>
+                                        <td>roberto.mendes@upafrancodarocha.com</td>
+                                        <td>Médico Plantonista</td>
+                                        <td>
+                                            <span class="etiqueta etiqueta-acesso">
+                                                Tem acesso ao sistema
+                                            </span>
+                                        </td>
+                                        <td>Ativo</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

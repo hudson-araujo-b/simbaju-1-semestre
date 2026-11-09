@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Histórico de triagens</title>
+        <link rel="stylesheet" href="../css/historico.css" />
+        <link rel="stylesheet" href="../css/menu.css" />
+    </head>
+    <body>
+        <div id="estrutura" class="estrutura">
+            <!-- MENU LATERAL -->
+            <nav id="menu-lateral" class="menu-lateral">
+                <!-- Logo e nome do projeto -->
+                <div id="menu-marca" class="menu-marca">
+                    <img class="menu-logo" src="../media/Emblema Brasileiro de Saúde em Cruz.png" />
+                    <p class="menu-nome">SGAP</p>
+                </div>
+                <hr />
+                <!-- Botões de navegação -->
+                <ul id="menu-links" class="menu-links">
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./pagina-inicial.html">
+                            Página inicial
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./triagem.html">
+                            Nova triagem
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./historico.html">Histórico</a>
+                    </li>
+                    <li><a class="menu-botao menu-botao-ativo" href="./equipe.html">Equipe</a></li>
+                </ul>
+                <div class="menu-rodape">
+                    <a class="menu-botao menu-botao-deslogar" href="../index.html">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <path d="M9 5H5v14h4M14 8l4 4-4 4M9 12h9" />
+                        </svg>
+                        <span>Deslogar</span>
+                    </a>
+                </div>
+            </nav>
+            <!-- Área do conteúdo -->
+            <main class="conteudo">
+                <div class="caixa-historico">
+                    <h1>Histórico de triagens</h1>
+                    <form class="form-triagem">
+                        <!-- Paciente -->
+                        <div class="campo">
+                            <label for="paciente">Paciente</label>
+                            <input
+                                type="text"
+                                id="paciente"
+                                name="paciente"
+                                placeholder="Insira o nome"
+                            />
+                        </div>
+                        <!-- Cor da emergência -->
+                        <div class="campo">
+                            <label for="cor-emergencia">Cor</label>
+                            <select id="cor-emergencia" name="cor-emergencia">
+                                <option value="">Selecione</option>
+                                <option value="vermelho">Vermelho</option>
+                                <option value="laranja">Laranja</option>
+                                <option value="amarelo">Amarelo</option>
+                                <option value="verde">Verde</option>
+                                <option value="azul">Azul</option>
+                            </select>
+                        </div>
+                        <!-- Data -->
+                        <div class="campo">
+                            <label for="data">Data</label>
+                            <input type="date" id="data" name="data" />
+                        </div>
+                        <button type="button" class="btn-procurar">Procurar</button>
+                    </form>
+                    <!-- Histórico de exemplo -->
+                    <section class="lista-historico">
+                        <h2>Registros anteriores</h2>
+                        <!-- Cabeçalho das colunas -->
+                        <div class="registro-cabecalho">
+                            <span>Paciente</span>
+                            <span>Data/Hora</span>
+                            <span>Profissional</span>
+                            <span>Discriminador</span>
+                            <span>Cor</span>
+                        </div>
+                        <ul class="registros">
+                            <li class="registro">
+                                <span class="registro-paciente">Maria Oliveira</span>
+                                <span class="registro-data">
+                                    12/03/2026
+                                    <small class="registro-hora">14:32</small>
+                                </span>
+                                <span class="registro-profissional">Enf. Ana Souza</span>
+                                <span class="registro-motivo">Compr. das vias aéreas</span>
+                                <span class="registro-cor cor-vermelho">Vermelho</span>
+                            </li>
+                            <li class="registro">
+                                <span class="registro-paciente">Carlos Pereira</span>
+                                <span class="registro-data">
+                                    11/03/2026
+                                    <small class="registro-hora">09:15</small>
+                                </span>
+                                <span class="registro-profissional">Enf. Ana Souza</span>
+                                <span class="registro-motivo">Dispneia aguda</span>
+                                <span class="registro-cor cor-laranja">Laranja</span>
+                            </li>
+                            <li class="registro">
+                                <span class="registro-paciente">João Santos</span>
+                                <span class="registro-data">
+                                    12/03/2026
+                                    <small class="registro-hora">16:48</small>
+                                </span>
+                                <span class="registro-profissional">Enf. Juliana Rocha</span>
+                                <span class="registro-motivo">Febre alta</span>
+                                <span class="registro-cor cor-amarelo">Amarelo</span>
+                            </li>
+                            <li class="registro">
+                                <span class="registro-paciente">Ana Costa</span>
+                                <span class="registro-data">
+                                    11/03/2026
+                                    <small class="registro-hora">11:05</small>
+                                </span>
+                                <span class="registro-profissional">Enf. Renata Dias</span>
+                                <span class="registro-motivo">Torção no tornozelo</span>
+                                <span class="registro-cor cor-verde">Verde</span>
+                            </li>
+                            <li class="registro">
+                                <span class="registro-paciente">Beatriz Lima</span>
+                                <span class="registro-data">
+                                    10/03/2026
+                                    <small class="registro-hora">08:20</small>
+                                </span>
+                                <span class="registro-profissional">Enf. Juliana Rocha</span>
+                                <span class="registro-motivo">Dor leve recente</span>
+                                <span class="registro-cor cor-azul">Azul</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

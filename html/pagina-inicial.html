@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SGAP</title>
+        <link rel="stylesheet" href="../css/geral.css" />
+        <link rel="stylesheet" href="../css/pagina-inicial.css" />
+        <link rel="stylesheet" href="../css/menu.css" />
+    </head>
+    <body>
+        <div id="estrutura" class="estrutura">
+            <!-- MENU LATERAL -->
+            <nav id="menu-lateral" class="menu-lateral">
+                <!-- Logo e nome do projeto -->
+                <div id="menu-marca" class="menu-marca">
+                    <img class="menu-logo" src="../media/Emblema Brasileiro de Saúde em Cruz.png" />
+                    <p class="menu-nome">SGAP</p>
+                </div>
+                <hr />
+                <!-- Botões de navegação -->
+                <ul id="menu-links" class="menu-links">
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./pagina-inicial.html">
+                            Página inicial
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./triagem.html">
+                            Nova triagem
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./historico.html">Histórico</a>
+                    </li>
+                    <li><a class="menu-botao menu-botao-ativo" href="./equipe.html">Equipe</a></li>
+                </ul>
+                <div class="menu-rodape">
+                    <a class="menu-botao menu-botao-deslogar" href="../index.html">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <path d="M9 5H5v14h4M14 8l4 4-4 4M9 12h9" />
+                        </svg>
+                        <span>Deslogar</span>
+                    </a>
+                </div>
+            </nav>
+            <div id="pagina" class="pagina">
+                <!-- CABEÇALHO -->
+                <header id="cabecalho" class="cabecalho">
+                    <div class="cabecalho-titulos">
+                        <h1 class="titulo-sistema">SGAP</h1>
+                        <hr />
+                        <p class="subtitulo-sistema">
+                            Sistema de Triagem Manchester — UPA Franco da Rocha
+                        </p>
+                    </div>
+                    <p id="usuario-logado" class="usuario-logado">
+                        Dra. Marina Souza — Enfermeira Triagem
+                    </p>
+                </header>
+                <main>
+                    <!-- CARTÕES DE RESUMO -->
+                    <section id="resumo" class="resumo">
+                        <div id="cartao-laranja" class="cartao-resumo cartao-laranja">
+                            <h2 class="cartao-titulo">URGENTE — Laranja</h2>
+                            <p class="cartao-numero">07</p>
+                            <p class="cartao-descricao">pacientes aguardando — meta 10 min</p>
+                        </div>
+                        <div id="cartao-vermelho" class="cartao-resumo cartao-vermelho">
+                            <h2 class="cartao-titulo">EMERGÊNCIA — Vermelho</h2>
+                            <p class="cartao-numero">02</p>
+                            <p class="cartao-descricao">atendimento imediato — meta 0 min</p>
+                        </div>
+                    </section>
+                    <!-- FILA GERAL -->
+                    <div class="fila-caixa">
+                        <section id="fila-geral" class="fila-geral">
+                            <h2 class="fila-titulo">Fila Geral por Prioridade</h2>
+                            <p class="fila-explicacao">
+                                Ordenada por classificação de risco e tempo de espera
+                            </p>
+                        </section>
+                    </div>
+                    <div class="area-tabela">
+                        <table id="tabela-fila" class="tabela-fila">
+                            <thead>
+                                <tr>
+                                    <th class="coluna-paciente">Paciente</th>
+                                    <th class="coluna-idade">Idade</th>
+                                    <th class="coluna-classificacao">Classificação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Maria das Graças Oliveira</td>
+                                    <td>72</td>
+                                    <td>
+                                        <span class="etiqueta etiqueta-emergencia">EMERGÊNCIA</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ana Beatriz Fernandes</td>
+                                    <td>33</td>
+                                    <td>
+                                        <span class="etiqueta etiqueta-muito-urgente">
+                                            MUITO URGENTE
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Roberto Nunes Cardoso</td>
+                                    <td>54</td>
+                                    <td><span class="etiqueta etiqueta-urgente">URGENTE</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Fernanda Alves Costa</td>
+                                    <td>39</td>
+                                    <td>
+                                        <span class="etiqueta etiqueta-pouco-urgente">
+                                            POUCO URGENTE
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sônia Mendes de Araújo</td>
+                                    <td>66</td>
+                                    <td>
+                                        <span class="etiqueta etiqueta-nao-urgente">
+                                            NÃO URGENTE
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
+                <!-- BOTÃO NOVA TRIAGEM -->
+                <footer id="rodape-acao" class="rodape-acao">
+                    <a id="botao-nova-triagem" class="botao-nova-triagem" href="./triagem.html">
+                        + NOVA TRIAGEM
+                    </a>
+                    <p class="rodape-texto">
+                        Inicia uma nova classificação de risco
+                        <br />
+                        Abre a árvore de decisão do Protocolo de Manchester
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

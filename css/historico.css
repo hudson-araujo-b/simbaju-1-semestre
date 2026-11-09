@@ -1,0 +1,331 @@
+/* CONFIGURAÇÕES GERAIS */
+
+:root {
+    --colunas: 1.8fr 0.8fr 1.4fr 2fr 0.9fr;
+    --gap-colunas: 13px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.estrutura {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* MENU LATERAL */
+
+.menu-lateral {
+    width: 227px;
+    min-width: 227px;
+    height: 100vh;
+    padding: 32px 3px;
+    background-color: #307ed2;
+
+    position: sticky;
+    top: 0;
+}
+
+.menu-marca {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.menu-logo {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 16px;
+    border-radius: 12px;
+    background-color: #a5d2ff;
+}
+
+.menu-nome {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.menu-lateral hr {
+    border: none;
+    border-top: 1px solid #165c9f;
+    margin: 0 14px 26px 0;
+}
+
+/* Botões do menu */
+
+.menu-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-botao {
+    display: block;
+    padding: 14px 16px;
+
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+
+    background-color: #2067aa;
+    border-radius: 8px;
+}
+
+.menu-botao:hover {
+    background-color: #18558f;
+}
+
+.menu-botao-ativo {
+    background-color: #18558f;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.conteudo {
+    flex: 1;
+    min-width: 0;
+    padding: 0 30px 30px 0;
+}
+
+.caixa-historico {
+    background-color: #c6dcff;
+    border-radius: 16px;
+
+    padding: 40px 64px;
+    min-height: calc(100vh - 30px);
+    width: 100%;
+}
+
+.caixa-historico h1 {
+    margin: 0 0 30px;
+    padding: 25px 40px;
+
+    background-color: white;
+    border-radius: 15px;
+
+    font-size: 28px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* FORMULÁRIO DE TRIAGEM */
+
+.form-triagem {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+
+    margin: 30px 0;
+    padding: 25px;
+
+    background-color: white;
+    border-radius: 12px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 10px 12px;
+
+    font-size: 14px;
+    border: 1px solid #b9d3ee;
+    border-radius: 8px;
+
+    background-color: white;
+    color: #333;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #307ed2;
+}
+
+.btn-procurar {
+    align-self: end;
+
+    padding: 11px 20px;
+    font-size: 14px;
+    font-weight: bold;
+
+    color: white;
+    background-color: #2067aa;
+
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-procurar:hover {
+    background-color: #18558f;
+}
+
+/* HISTÓRICO DE TRIAGENS */
+
+.lista-historico {
+    margin-top: 30px;
+}
+
+.lista-historico h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.registros {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+/* Cabeçalho */
+
+.registro-cabecalho {
+    display: grid;
+    grid-template-columns: var(--colunas);
+    gap: var(--gap-colunas);
+    align-items: center;
+
+    padding: 16px 12px;
+
+    font-size: 11px;
+    font-weight: bold;
+    color: #4a5a6b;
+
+    text-transform: uppercase;
+    background-color: #eef3f9;
+
+    border-radius: 10px 10px 0 0;
+}
+
+/* Linhas */
+
+.registro {
+    display: grid;
+    grid-template-columns: var(--colunas);
+    gap: var(--gap-colunas);
+    align-items: center;
+
+    padding: 12px;
+    border-bottom: 1px solid #e6eef7;
+
+    font-size: 13px;
+}
+
+.registro:last-child {
+    border-bottom: none;
+}
+
+.registro-paciente,
+.registro-profissional,
+.registro-motivo {
+    padding: 8px 10px;
+    border: 1px solid #b9d3ee;
+    border-radius: 8px;
+
+    background-color: white;
+    min-width: 0;
+}
+
+.registro-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 6px;
+    border: 1px solid #b9d3ee;
+    border-radius: 8px;
+}
+
+.registro-hora {
+    font-size: 11px;
+    color: #666;
+}
+
+.registro-motivo {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* CORES DE CLASSIFICAÇÃO */
+
+.registro-cor {
+    display: block;
+    text-align: center;
+
+    padding: 7px 8px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.cor-vermelho {
+    background-color: #ff0000;
+}
+
+.cor-laranja {
+    background-color: #ff9000;
+}
+
+.cor-amarelo {
+    background-color: #ffd600;
+    color: black;
+}
+
+.cor-verde {
+    background-color: #00b85a;
+}
+
+.cor-azul {
+    background-color: #0066cc;
+}
+
+/* TELAS MENORES */
+
+@media (max-width: 1100px) {
+    .caixa-historico {
+        padding: 30px;
+    }
+
+    .form-triagem {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lista-historico {
+        overflow-x: auto;
+    }
+
+    .registro,
+    .registro-cabecalho {
+        min-width: 850px;
+    }
+}

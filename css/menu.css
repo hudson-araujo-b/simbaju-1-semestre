@@ -1,0 +1,47 @@
+/* Estilo compartilhado do menu lateral em todas as páginas internas. */
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.menu-lateral > * {
+    flex-shrink: 0;
+}
+
+.menu-lateral > hr {
+    align-self: stretch;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.menu-rodape {
+    margin-top: auto;
+    padding-top: 24px;
+}
+
+.menu-botao-deslogar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    color: #ffffff;
+    background-color: #c62828;
+    transition: background-color 0.15s ease;
+}
+
+.menu-botao-deslogar:hover {
+    color: #ffffff;
+    background-color: #a61f1f;
+}
+
+.menu-botao-deslogar:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.menu-botao-deslogar svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}

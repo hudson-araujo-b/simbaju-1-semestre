@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nova triagem — SGAP</title>
+        <link rel="stylesheet" href="../css/geral.css" />
+        <link rel="stylesheet" href="../css/pagina-inicial.css" />
+        <link rel="stylesheet" href="../css/triagem.css" />
+        <link rel="stylesheet" href="../css/menu.css" />
+    </head>
+    <body>
+        <div class="estrutura">
+            <nav class="menu-lateral" aria-label="Menu principal">
+                <div class="menu-marca">
+                    <img
+                        class="menu-logo"
+                        src="../media/Emblema Brasileiro de Saúde em Cruz.png"
+                        alt="Logo do SGAP"
+                    />
+                    <p class="menu-nome">SGAP</p>
+                </div>
+                <hr />
+                <ul class="menu-links">
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./pagina-inicial.html">
+                            Página inicial
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./triagem.html">
+                            Nova triagem
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-botao menu-botao-ativo" href="./historico.html">Histórico</a>
+                    </li>
+                    <li><a class="menu-botao menu-botao-ativo" href="./equipe.html">Equipe</a></li>
+                </ul>
+                <div class="menu-rodape">
+                    <a class="menu-botao menu-botao-deslogar" href="../index.html">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <path d="M9 5H5v14h4M14 8l4 4-4 4M9 12h9" />
+                        </svg>
+                        <span>Deslogar</span>
+                    </a>
+                </div>
+            </nav>
+            <div class="pagina">
+                <main class="triagem-conteudo">
+                    <div class="fluxo-triagem">
+                        <input
+                            class="controle-etapa"
+                            type="radio"
+                            name="etapa"
+                            id="etapa-cadastro"
+                            checked
+                        />
+                        <input class="controle-etapa" type="radio" name="etapa" id="etapa-vitais" />
+                        <input class="controle-etapa" type="radio" name="etapa" id="etapa-queixa" />
+                        <input
+                            class="controle-etapa"
+                            type="radio"
+                            name="etapa"
+                            id="etapa-discriminadores"
+                        />
+                        <input
+                            class="controle-etapa"
+                            type="radio"
+                            name="etapa"
+                            id="etapa-sugestao"
+                        />
+                        <nav class="etapas" aria-label="Etapas da triagem">
+                            <label for="etapa-cadastro">1. Cadastro</label>
+                            <label for="etapa-vitais">2. Sinais vitais</label>
+                            <label for="etapa-queixa">3. Queixa principal</label>
+                            <label for="etapa-discriminadores">4. Discriminadores</label>
+                            <label for="etapa-sugestao">5. Sugestão</label>
+                        </nav>
+                        <div class="conteudo-etapas">
+                            <section id="cadastro" class="cartao-etapa">
+                                <h2>1. Cadastro do paciente</h2>
+                                <p class="texto-ajuda">
+                                    Informe os dados básicos para iniciar a triagem.
+                                </p>
+                                <div class="campos-grid">
+                                    <div class="campo campo-largo">
+                                        <label for="nome">Nome completo</label>
+                                        <input id="nome" name="nome" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for="nascimento">Data de nascimento</label>
+                                        <input
+                                            id="nascimento"
+                                            name="nascimento"
+                                            placeholder="dd/mm/aaaa"
+                                        />
+                                    </div>
+                                    <div class="campo">
+                                        <label for="documento">CPF ou Cartão SUS</label>
+                                        <input id="documento" name="documento" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for="sexo">Sexo</label>
+                                        <select id="sexo" name="sexo">
+                                            <option>Selecione</option>
+                                            <option>Feminino</option>
+                                            <option>Masculino</option>
+                                            <option>Não informado</option>
+                                        </select>
+                                    </div>
+                                    <div class="campo">
+                                        <label for="acompanhante">Acompanhante</label>
+                                        <input id="acompanhante" name="acompanhante" />
+                                    </div>
+                                </div>
+                                <p class="acoes-etapa">
+                                    <label class="botao-proximo" for="etapa-vitais">
+                                        Continuar
+                                    </label>
+                                </p>
+                            </section>
+                            <section id="sinais-vitais" class="cartao-etapa">
+                                <h2>2. Sinais vitais</h2>
+                                <p class="texto-ajuda">
+                                    Registre os valores aferidos durante o atendimento.
+                                </p>
+                                <div class="campos-grid">
+                                    <div class="campo">
+                                        <label for="pa">Pressão arterial (mmHg)</label>
+                                        <input id="pa" name="pa" placeholder="120 × 80" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for="fc">Frequência cardíaca (bpm)</label>
+                                        <input id="fc" name="fc" type="number" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for="fr">Frequência respiratória (irpm)</label>
+                                        <input id="fr" name="fr" type="number" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for="spo2">Saturação de O₂ (%)</label>
+                                        <input id="spo2" name="spo2" type="number" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for="temperatura">Temperatura (°C)</label>
+                                        <input
+                                            id="temperatura"
+                                            name="temperatura"
+                                            type="number"
+                                            step="0.1"
+                                        />
+                                    </div>
+                                    <div class="campo">
+                                        <label for="dor">Dor (0 a 10)</label>
+                                        <input id="dor" name="dor" type="number" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for="consciencia">Consciência</label>
+                                        <select id="consciencia" name="consciencia">
+                                            <option>Alerta</option>
+                                            <option>Responde à voz</option>
+                                            <option>Responde à dor</option>
+                                            <option>Não responde</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <p class="acoes-etapa">
+                                    <label class="botao-voltar" for="etapa-cadastro">Voltar</label>
+                                    <label class="botao-proximo" for="etapa-queixa">
+                                        Continuar
+                                    </label>
+                                </p>
+                            </section>
+                            <section id="queixa" class="cartao-etapa">
+                                <h2>3. Queixa principal</h2>
+                                <p class="texto-ajuda">
+                                    Selecione o motivo principal que trouxe o paciente hoje.
+                                </p>
+                                <div class="opcoes-queixa">
+                                    <label class="opcao-queixa">
+                                        <input type="radio" name="queixa" checked />
+                                        Diarreia e/ou vômitos
+                                    </label>
+                                    <label class="opcao-queixa">
+                                        <input type="radio" name="queixa" />
+                                        Dor abdominal
+                                    </label>
+                                    <label class="opcao-queixa">
+                                        <input type="radio" name="queixa" />
+                                        Febre
+                                    </label>
+                                    <label class="opcao-queixa">
+                                        <input type="radio" name="queixa" />
+                                        Trauma / ortopedia
+                                    </label>
+                                    <label class="opcao-queixa">
+                                        <input type="radio" name="queixa" />
+                                        Nenhuma dessas / outra queixa
+                                    </label>
+                                </div>
+                                <p class="acoes-etapa">
+                                    <label class="botao-voltar" for="etapa-vitais">Voltar</label>
+                                    <label class="botao-proximo" for="etapa-discriminadores">
+                                        Continuar
+                                    </label>
+                                </p>
+                            </section>
+                            <section id="discriminadores" class="cartao-etapa">
+                                <h2>4. Discriminadores — diarreia e/ou vômitos</h2>
+                                <p class="texto-ajuda">Responda Sim ou Não para cada item.</p>
+                                <div class="lista-discriminadores">
+                                    <div class="linha-discriminador">
+                                        <span>Comprometimento da via aérea?</span>
+                                        <span class="opcoes-resposta">
+                                            <label>
+                                                <input type="radio" name="via" />
+                                                Sim
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="via" checked />
+                                                Não
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <div class="linha-discriminador">
+                                        <span>Respiração ineficaz?</span>
+                                        <span class="opcoes-resposta">
+                                            <label>
+                                                <input type="radio" name="resp" />
+                                                Sim
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="resp" checked />
+                                                Não
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <div class="linha-discriminador">
+                                        <span>Choque?</span>
+                                        <span class="opcoes-resposta">
+                                            <label>
+                                                <input type="radio" name="choque" />
+                                                Sim
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="choque" checked />
+                                                Não
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <div class="linha-discriminador">
+                                        <span>Alteração recente do estado de consciência?</span>
+                                        <span class="opcoes-resposta">
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    name="consciencia-discriminador"
+                                                />
+                                                Sim
+                                            </label>
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    name="consciencia-discriminador"
+                                                    checked
+                                                />
+                                                Não
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <div class="linha-discriminador">
+                                        <span>Sangue vermelho nas fezes?</span>
+                                        <span class="opcoes-resposta">
+                                            <label>
+                                                <input type="radio" name="hemato" />
+                                                Sim
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="hemato" checked />
+                                                Não
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <div class="linha-discriminador">
+                                        <span>Vômito com sangue?</span>
+                                        <span class="opcoes-resposta">
+                                            <label>
+                                                <input type="radio" name="hematemese" />
+                                                Sim
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="hematemese" checked />
+                                                Não
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <div class="linha-discriminador">
+                                        <span>Fezes pretas?</span>
+                                        <span class="opcoes-resposta">
+                                            <label>
+                                                <input type="radio" name="fezes-pretas" />
+                                                Sim
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="fezes-pretas" checked />
+                                                Não
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <div class="linha-discriminador">
+                                        <span>Sinais de desidratação?</span>
+                                        <span class="opcoes-resposta">
+                                            <label>
+                                                <input type="radio" name="desidratacao" />
+                                                Sim
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="desidratacao" checked />
+                                                Não
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <div class="linha-discriminador">
+                                        <span>Vômitos persistentes?</span>
+                                        <span class="opcoes-resposta">
+                                            <label>
+                                                <input type="radio" name="vomitos-persistentes" />
+                                                Sim
+                                            </label>
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    name="vomitos-persistentes"
+                                                    checked
+                                                />
+                                                Não
+                                            </label>
+                                        </span>
+                                    </div>
+                                    <div class="linha-discriminador">
+                                        <span>Vômitos?</span>
+                                        <span class="opcoes-resposta">
+                                            <label>
+                                                <input type="radio" name="vomitos" />
+                                                Sim
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="vomitos" checked />
+                                                Não
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <p class="acoes-etapa">
+                                    <label class="botao-voltar" for="etapa-queixa">Voltar</label>
+                                    <label class="botao-proximo" for="etapa-sugestao">
+                                        Ver sugestão
+                                    </label>
+                                </p>
+                            </section>
+                            <section id="sugestao" class="cartao-etapa">
+                                <h2>5. Sugestão de classificação</h2>
+                                <div class="resultado-classificacao">
+                                    <span class="etiqueta-risco">LARANJA</span>
+                                    <h3 class="resultado-titulo">Muito urgente</h3>
+                                    <p class="resultado-detalhe">
+                                        <strong>Tempo-alvo:</strong>
+                                        até 10 min
+                                    </p>
+                                    <p class="resultado-detalhe">
+                                        <strong>Discriminador:</strong>
+                                        Hematoquesia/rectorragia
+                                    </p>
+                                    <p class="resultado-detalhe">
+                                        <strong>Fluxograma:</strong>
+                                        Diarreia e/ou vômitos
+                                    </p>
+                                </div>
+                                <p class="acoes-etapa">
+                                    <label class="botao-voltar" for="etapa-cadastro">
+                                        Revisar dados
+                                    </label>
+                                    <a class="botao-proximo" href="pagina-inicial.html">
+                                        Finalizar
+                                    </a>
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

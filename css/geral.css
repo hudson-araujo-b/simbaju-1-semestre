@@ -1,0 +1,168 @@
+:root {
+    /* Cores do sistema */
+    --cor-texto: #333333;
+    --cor-texto-suave: #666666;
+    --cor-fundo-claro: #307dd6;
+    --cor-botao: #1a65ac;
+
+    /* Cores das classificações de risco (Manchester) */
+    --cor-vermelho: #ff0000;
+    --cor-laranja: #ff8c00;
+    --cor-amarelo: #ffd700;
+    --cor-verde: #00b050;
+    --cor-azul: #0066cc;
+}
+
+/* Estilos usados pela página inicial, pela triagem e pela equipe. */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--cor-texto);
+    background-color: #ffffff;
+}
+
+.estrutura {
+    display: flex;
+    min-height: 100vh;
+}
+
+.pagina {
+    flex: 1;
+    min-width: 0;
+    max-width: 1200px;
+    padding: 40px 64px;
+    background-color: #c3dbff;
+    margin-bottom: 150px;
+    border-radius: 15px;
+}
+
+.menu-lateral {
+    width: 240px;
+    padding: 32px 16px;
+    background-color: var(--cor-fundo-claro);
+    border-right: 1px solid #e0e0da;
+    /* Mantém o menu visível enquanto a página rola */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.menu-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--cor-texto-suave);
+    background-color: #bfe0ffcb;
+
+    border-radius: 12px;
+}
+
+.menu-nome {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+hr {
+    color: #0066ccb7;
+    margin-bottom: 25px;
+}
+
+.menu-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-botao {
+    display: block;
+    padding: 12px 16px;
+    font-size: 15px;
+    color: var(--cor-texto);
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.menu-botao:hover {
+    background-color: #73acec;
+}
+
+.menu-botao-ativo {
+    color: #ffffff;
+    background-color: var(--cor-botao);
+}
+
+.titulo-sistema {
+    margin: 0;
+    font-size: 32px;
+}
+
+.subtitulo-sistema {
+    margin: 4px 0 0 0;
+    font-size: 18px;
+    color: var(--cor-texto-suave);
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cabecalho-titulos {
+    padding: 20px 190px 40px 50px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+.usuario-logado {
+    margin: 0;
+    padding: 12px 18px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.area-tabela {
+    overflow-x: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.tabela-fila {
+    width: 100%;
+    min-width: 760px;
+    font-size: 12px;
+}
+
+.tabela-fila th {
+    text-align: left;
+    font-size: 11px;
+}
+
+.tabela-fila td {
+    padding: 12px 10px;
+}
+
+.etiqueta {
+    display: inline-block;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 20px;
+}

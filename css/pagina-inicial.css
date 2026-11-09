@@ -1,0 +1,227 @@
+/* Menu lateral */
+
+.menu-marca {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+/* Botão da página em que o usuário está */
+
+.menu-botao-ativo:hover {
+    background-color: var(--cor-botao);
+}
+
+/* Cabeçalho */
+
+.cabecalho {
+    border-left-color: #0066cc;
+}
+
+.usuario-logado {
+    background-color: var(--cor-fundo-claro);
+}
+
+/* Cartões de resumo */
+
+.resumo {
+    display: flex;
+    gap: 22px;
+    margin-top: 48px;
+}
+
+.cartao-resumo {
+    flex: 1;
+    padding: 28px 16px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 12px;
+}
+
+.cartao-laranja {
+    background-color: var(--cor-laranja);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cartao-vermelho {
+    background-color: var(--cor-vermelho);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cartao-titulo {
+    margin: 0;
+    font-size: 16px;
+}
+
+.cartao-numero {
+    margin: 4px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cartao-descricao {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Fila geral */
+
+.fila-geral {
+    margin-top: 20px;
+}
+
+.fila-titulo {
+    margin: 0;
+    font-size: 16px;
+}
+
+.fila-explicacao {
+    margin: 4px 0 16px 0;
+    font-size: 11px;
+    color: var(--cor-texto-suave);
+}
+
+/* Faz a tabela rolar de lado em telas pequenas */
+.area-tabela {
+    border-radius: 12px;
+    border: 1px solid #d0e1fd;
+}
+
+.tabela-fila {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.tabela-fila th {
+    padding: 14px 12px;
+    background-color: #f1f5f9;
+    color: var(--cor-texto-suave);
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* Garante os cantos arredondados superiores da tabela acompanhando o card pai */
+.tabela-fila tr:first-child th:first-child {
+    border-top-left-radius: 11px;
+}
+
+.tabela-fila tr:first-child th:last-child {
+    border-top-right-radius: 11px;
+}
+
+/* Adiciona as bordas horizontais suaves entre as linhas de pacientes */
+.tabela-fila td {
+    border-bottom: 1px solid #edf2f7;
+    color: var(--cor-texto);
+}
+
+/* Remove a borda da última linha para não criar uma linha dupla com o fundo do card */
+.tabela-fila tr:last-child td {
+    border-bottom: none;
+}
+
+/* Efeito visual ao passar o mouse na linha do paciente */
+.tabela-fila tr:hover td {
+    background-color: #fafbfc;
+    transition: background-color 0.15s ease;
+}
+
+/* Largura de cada coluna */
+.coluna-paciente {
+    width: 25%;
+}
+
+.coluna-idade {
+    width: 7%;
+}
+
+.coluna-classificacao {
+    width: 25%;
+}
+
+/* Etiquetas de classificação */
+
+.etiqueta {
+    width: 128px;
+    padding: 6px 0;
+}
+
+.etiqueta-emergencia {
+    background-color: var(--cor-vermelho);
+}
+
+.etiqueta-muito-urgente {
+    background-color: var(--cor-laranja);
+}
+
+.etiqueta-urgente {
+    background-color: var(--cor-amarelo);
+    color: var(--cor-texto);
+}
+
+.etiqueta-pouco-urgente {
+    background-color: var(--cor-verde);
+}
+
+.etiqueta-nao-urgente {
+    background-color: var(--cor-azul);
+}
+
+/* Botão nova triagem */
+
+.rodape-acao {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.botao-nova-triagem {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 255px;
+    padding: 14px 0;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: var(--cor-botao);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.botao-nova-triagem:hover {
+    opacity: 0.88;
+}
+
+.rodape-texto {
+    margin: 0;
+    font-size: 11px;
+    color: var(--cor-texto-suave);
+}
+
+/* CELULAR E TABLET (telas com até 700px de largura) */
+
+@media (max-width: 700px) {
+    .pagina {
+        padding: 24px 16px;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+    }
+
+    .resumo {
+        flex-direction: column;
+        margin-top: 28px;
+    }
+
+    .rodape-acao {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .botao-nova-triagem {
+        width: 100%;
+    }
+}

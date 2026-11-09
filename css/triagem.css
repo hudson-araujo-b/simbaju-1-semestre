@@ -1,0 +1,272 @@
+/* Etapas */
+
+.triagem-conteudo {
+    margin-top: 32px;
+}
+
+.controle-etapa {
+    /* Os radios guardam a etapa atual; os labels permitem trocar de etapa. */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.etapas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.etapas label {
+    flex: 1;
+    min-width: 125px;
+    padding: 12px 8px;
+    color: var(--cor-botao);
+    background: #ffffff;
+    border-bottom: 4px solid var(--cor-botao);
+    text-align: center;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* :checked identifica a etapa selecionada; ~ alcança os elementos que vêm depois. */
+#etapa-cadastro:checked ~ .etapas label[for="etapa-cadastro"],
+#etapa-vitais:checked ~ .etapas label[for="etapa-vitais"],
+#etapa-queixa:checked ~ .etapas label[for="etapa-queixa"],
+#etapa-discriminadores:checked ~ .etapas label[for="etapa-discriminadores"],
+#etapa-sugestao:checked ~ .etapas label[for="etapa-sugestao"] {
+    color: #ffffff;
+    background: var(--cor-botao);
+}
+
+#etapa-cadastro:focus-visible ~ .etapas label[for="etapa-cadastro"],
+#etapa-vitais:focus-visible ~ .etapas label[for="etapa-vitais"],
+#etapa-queixa:focus-visible ~ .etapas label[for="etapa-queixa"],
+#etapa-discriminadores:focus-visible ~ .etapas label[for="etapa-discriminadores"],
+#etapa-sugestao:focus-visible ~ .etapas label[for="etapa-sugestao"] {
+    outline: 3px solid var(--cor-azul);
+    outline-offset: 2px;
+}
+
+.conteudo-etapas .cartao-etapa {
+    /* Esconde as etapas; a regra abaixo mostra somente a selecionada. */
+    display: none;
+}
+
+#etapa-cadastro:checked ~ .conteudo-etapas #cadastro,
+#etapa-vitais:checked ~ .conteudo-etapas #sinais-vitais,
+#etapa-queixa:checked ~ .conteudo-etapas #queixa,
+#etapa-discriminadores:checked ~ .conteudo-etapas #discriminadores,
+#etapa-sugestao:checked ~ .conteudo-etapas #sugestao {
+    display: block;
+}
+
+/* Cartões e campos */
+
+.cartao-etapa {
+    margin-bottom: 20px;
+    padding: 28px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cartao-etapa h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.texto-ajuda {
+    margin: 8px 0 20px;
+    color: var(--cor-texto-suave);
+    font-size: 14px;
+}
+
+.campos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.campo-largo {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: var(--cor-texto);
+    background: #ffffff;
+    border: 1px solid #b8cde8;
+    border-radius: 7px;
+    font: inherit;
+}
+
+/* Navegação entre as etapas */
+
+.acoes-etapa {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.botao-proximo,
+.botao-voltar {
+    display: inline-block;
+    padding: 12px 20px;
+    color: #ffffff;
+    background: var(--cor-botao);
+    border: 1px solid var(--cor-botao);
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.botao-voltar {
+    color: var(--cor-botao);
+    background: #ffffff;
+}
+
+/* Queixa e discriminadores */
+
+.opcoes-queixa {
+    display: grid;
+    gap: 10px;
+}
+
+.opcao-queixa,
+.opcoes-resposta label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid #b8cde8;
+    border-radius: 8px;
+}
+
+.opcao-queixa {
+    min-height: 48px;
+}
+
+.opcao-queixa input,
+.opcoes-resposta input {
+    accent-color: var(--cor-botao);
+}
+
+.lista-discriminadores {
+    border-top: 1px solid #d7e2f0;
+}
+
+.linha-discriminador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    min-height: 58px;
+    padding: 8px 0;
+    border-bottom: 1px solid #d7e2f0;
+}
+
+.opcoes-resposta {
+    display: flex;
+    flex-shrink: 0;
+    gap: 8px;
+}
+
+.opcoes-resposta label {
+    min-height: 40px;
+    padding: 5px 10px;
+}
+
+/* Sugestão fixa */
+
+.etiqueta-risco {
+    display: inline-block;
+    padding: 4px 9px;
+    color: #ffffff;
+    background: var(--cor-laranja);
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.resultado-classificacao {
+    margin-top: 20px;
+    padding: 22px;
+    border: 2px solid var(--cor-botao);
+    border-radius: 10px;
+}
+
+.resultado-titulo {
+    margin: 12px 0 4px;
+    font-size: 24px;
+}
+
+.resultado-detalhe {
+    margin: 6px 0;
+}
+
+/* Layout para telas menores */
+
+@media (max-width: 700px) {
+    .estrutura {
+        display: block;
+    }
+
+    .menu-lateral {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 12px;
+    }
+
+    .menu-marca,
+    .menu-lateral hr {
+        display: none;
+    }
+
+    .menu-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .pagina {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .cartao-etapa {
+        padding: 20px 16px;
+    }
+
+    .campos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .linha-discriminador {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 0;
+    }
+
+    .acoes-etapa a,
+    .acoes-etapa label {
+        flex: 1;
+        text-align: center;
+    }
+}
